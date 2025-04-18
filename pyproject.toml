@@ -1,0 +1,14 @@
+[project]
+name = "farmdsl"
+version = "0.1.0"
+description = "Domain‑specific language runtime for smart‑farm automation."
+authors = [{ name = "nick bass", email = "nckbass218@gmail.com" }]
+requires-python = ">=3.9"
+dependencies = ["lark>=1.1", "pint>=0.20"]
+
+[project.scripts]
+farm = "farmdsl:main"
+
+[build-system]
+requires = ["setuptools>=67", "wheel"]
+build-backend = "setuptools.build_meta"
