@@ -122,8 +122,11 @@ statement: schedule_stmt
          | let_stmt
          | zone_stmt
          | infer_stmt
+         | safetybox_stmt
          | COMMENT
-
+# new block for Safety Box hardware/config
+safetybox_stmt : "SAFETYBOX" "{" safety_pair ("," safety_pair)* "}"  -> safetybox
+safety_pair    : NAME "=" VALUE
 schedule_stmt : "SCHEDULE" TIME_SPEC                       -> schedule
 task_stmt     : "TASK" TASK_BODY                           -> task
 when_stmt     : "WHEN" BOOL_EXPR                           -> cond
